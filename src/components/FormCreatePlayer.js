@@ -1,17 +1,17 @@
 
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createPlayer } from "../redux/actions/PlayerActions";
-
+import PlayerDataService from "../redux/services/playerService";
+import { v4 as uuidv4 } from 'uuid';
 
   const FormCreatePlayer = () => {
     const initialPlayerState = {
-      playerId: "4",
-      name: "sebas",
+      playerId: uuidv4(),
+      name: "",
       firstPlace: 0,
       secondPlace:0,
       thirdPlace:0,
-      carId: "2"
+      carId: uuidv4()
     };
     const [player, setPlayer] = useState(initialPlayerState);
     const [submitted, setSubmitted] = useState(false);
@@ -21,30 +21,38 @@ import { createPlayer } from "../redux/actions/PlayerActions";
     const handleInputChange = event => {
       const { name, value } = event.target;
       setPlayer({ ...player, [name]: value });
+      
     };
-  
+    
     const savePlayer = () => {
-      const { playerId, name, firstPlace, secondPlace, thirdPlace, carId } = player;
+      var data = {
+        playerId: player.playerId,
+            name: player.name,
+            firstPlace: player.firstPlace,
+            secondPlace:player.secondPlace,
+            thirdPlace:player.thirdPlace,
+            carId: player.carId
+      };
+
   
-      dispatch(createPlayer(playerId, name, firstPlace, secondPlace, thirdPlace, carId))
-        .then(data => {
-          setPlayer({
-            playerId: data.playerId,
-            name: data.name,
-            firstPlace: data.firstPlace,
-            secondPlace:data.secondPlace,
-            thirdPlace:data.thirdPlace,
-            carId: data.carId
-         
-          });
-          setSubmitted(true);
   
-          console.log(data);
-        })
-        .catch(e => {
-          console.log(e);
+      PlayerDataService.create(data)
+      .then(response => {
+        setPlayer({
+          playerId: response.data.playerId,
+          name: response.data.name,
+          firstPlace: response.data.firstPlace,
+          secondPlace:response.data.secondPlace,
+          thirdPlace:response.data.thirdPlace,
+          carId: response.data.carId
         });
-    };
+        setSubmitted(true);
+        console.log(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
   
     const newPlayer= () => {
       setPlayer(initialPlayerState);
@@ -63,77 +71,77 @@ import { createPlayer } from "../redux/actions/PlayerActions";
     ) : (
       <div>
         <div className="form-group">
-          <label htmlFor="title">Player Id</label>
+          <label htmlFor="playerId">Player Id</label>
           <input
             type="text"
             className="form-control"
-            id="title"
-            required
-            value={player.playerId}
+            id="playerId"
+            disabled
+            value={uuidv4()}
             onChange={handleInputChange}
             name="title"
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="description">Name</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
             className="form-control"
-            id="description"
+            id="name"
             required
             value={player.name}
             onChange={handleInputChange}
-            name="description"
+            name="name"
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="title">firstPlace</label>
+          <label htmlFor="firstPlace">firstPlace</label>
           <input
             type="text"
             className="form-control"
-            id="title"
+            id="firstPlace"
             required
             value={player.firstPlace}
             onChange={handleInputChange}
-            name="title"
+            name="firstPlace"
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="title">secondPlace</label>
+          <label htmlFor="secondPlace">secondPlace</label>
           <input
             type="text"
             className="form-control"
-            id="title"
+            id="secondPlace"
             required
             value={player.secondPlace}
             onChange={handleInputChange}
-            name="title"
+            name="secondPlace"
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="title">thirdPlace</label>
+          <label htmlFor="thirdPlace">thirdPlace</label>
           <input
             type="text"
             className="form-control"
-            id="title"
+            id="thirdPlace"
             required
             value={player.thirdPlace}
             onChange={handleInputChange}
-            name="title"
+            name="thirdPlace"
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="title">carId</label>
+          <label htmlFor="carId">carId</label>
           <input
             type="text"
             className="form-control"
-            id="title"
-            required
+            id="carId"
+            disabled
             value={player.carId}
             onChange={handleInputChange}
             name="title"

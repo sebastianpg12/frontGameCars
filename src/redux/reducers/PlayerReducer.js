@@ -2,20 +2,19 @@ import {
     CREATE_PLAYER,
 
   } from "../actions/types";
+
+  const intialState = {
+    players: [],
+  };
   
-  const initialState = [];
-  
-  function playerReducer(players = initialState, action) {
-    const { type, payload } = action;
-  
+  export const playerReducer = (state = intialState, { type, payload }) => {
     switch (type) {
       case CREATE_PLAYER:
-        return [...players, payload];
-  
-    
+        return { ...state, players: payload };
       default:
-        return players;
+        return state;
     }
   };
+  
   
   export default playerReducer;
