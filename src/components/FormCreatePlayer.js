@@ -16,7 +16,6 @@ import { v4 as uuidv4 } from 'uuid';
     const [player, setPlayer] = useState(initialPlayerState);
     const [submitted, setSubmitted] = useState(false);
   
-    const dispatch = useDispatch();
   
     const handleInputChange = event => {
       const { name, value } = event.target;
