@@ -1,1 +1,0 @@
-export const CREATE_PLAYER = "CREATE_PLAYER";
