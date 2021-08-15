@@ -1,50 +1,31 @@
-import {
-    CREATE_PLAYER,
-    CREATE_PLAYER_SUCCES,
-    CREATE_PLAYER_FAILURE,
-    LOADIND_PLAYERS,
-    PLAYERS_LOAD_SUCCES,
-    GET_PLAYERS_FAILURE
-  } from "./types";
-  
-  import PlayerDataService from "../../infrastructure/services/playerService";
+import { TYPES_CREATE_PLAYER, TYPES_LOAD_PLAYERS } from "./types";
 
-  export const createPlayer = data => ({
-    type: CREATE_PLAYER,
-    payload: data,
-  });
+export const createPlayer = (data) => ({
+  type: TYPES_CREATE_PLAYER.CREATE_PLAYER,
+  payload: data,
+});
 
-export const createPlayerSucces = event => ({
-  type: CREATE_PLAYER_SUCCES,
+export const createPlayerSucces = (event) => ({
+  type: TYPES_CREATE_PLAYER.CREATE_PLAYER_SUCCESS,
   payload: event,
 });
 
-export const createPlayerFailure = messages => ({
-  type: CREATE_PLAYER_FAILURE,
+export const createPlayerFailure = (messages) => ({
+  type: TYPES_CREATE_PLAYER.CREATE_PLAYER_FAILURE,
   payload: messages,
 });
 
-//GET
-export const loadingPlayers = (id) =>({
-  type: LOADIND_PLAYERS,
-  payload:id
+export const loadingPlayers = (id) => ({
+  type: TYPES_LOAD_PLAYERS.LOADIND_PLAYERS,
+  payload: id,
 });
 
-export const loadingOKRSuccess = (players) =>({
-  type: PLAYERS_LOAD_SUCCES,
-  payload: players
+export const loadingPlayersSuccess = (players) => ({
+  type: TYPES_LOAD_PLAYERS.LOAD_PLAYERS_SUCCESS,
+  payload: players,
 });
 
-export const loadingOKRFailure = (error) =>({
-  type: GET_PLAYERS_FAILURE,
-  payload:error
-})
-
-  
- 
-
-  
-
-
-
- 
+export const loadingPlayersFailure = (error) => ({
+  type: TYPES_LOAD_PLAYERS.LOAD_PLAYERS_FAILURE,
+  payload: error,
+});

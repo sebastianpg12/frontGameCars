@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Router from "../src/view/router/Router";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {configureStore} from "./application/store/store";
+import { configureStore } from "./application/store/store";
+import { api } from "./infrastructure/index";
 import { Provider } from "react-redux";
-import playerService from "./infrastructure/services/playerService";
+import "./view/css/styles.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={configureStore(playerService)}>
+    <Provider store={configureStore(api)}>
       <Router />
     </Provider>
   </React.StrictMode>,

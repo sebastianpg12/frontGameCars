@@ -1,19 +1,7 @@
-import http from "../../enviroment/AXIOS_CONFIG";
+import http from "../../environment/AXIOS_CONFIG";
+import { RESOURCE_URL } from "../../environment/RESOURCE_URL";
 
-const create = data => {
-  return http.post("/create/player", data);
+export const playerService = {
+  create: data => http.post(RESOURCE_URL.createPlayer, data),
+  getById: player => http.get(RESOURCE_URL.getPlayerById(player.id)),
 };
-
-const getPlayerById = player => {
-  return http.get('/get/player/by/id/' + player.id)
-}
-
-const playerService = {
-  create,
-  getPlayerById
-};
-
-const service = {
-  playerService,
-}
-export default service;

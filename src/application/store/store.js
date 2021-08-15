@@ -1,11 +1,11 @@
-import { createStore, applyMiddleware } from "redux";
-import middleware from "../middleware";
+import middleware from "../middleware/index";
 import reducers from "../reducers/index";
-import {composeWithDevTools} from "redux-devtools-extension";
+import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-export const configureStore = (playerService) => createStore(
+export const configureStore = services => {
+  return createStore(
     reducers,
-    composeWithDevTools(applyMiddleware(...middleware.map(f => f(playerService))))
-    
+    composeWithDevTools(applyMiddleware(...middleware.map((fn) => fn(services)))),
   );
-
+};
