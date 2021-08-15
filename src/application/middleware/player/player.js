@@ -1,6 +1,6 @@
 import { createPlayerFailure, createPlayerSuccess, loadingPlayersSuccess, loadingPlayersFailure } from "../../../application/actions/PlayerActions";
 import { createDriverSuccess, createDriverFailure } from "../../../application/actions/DriverActions";
-import { createCarSucess, createCarFailure} from "../../../application/actions/CarActions";
+import { createCarSuccess, createCarFailure } from "../../../application/actions/CarActions";
 import { createLaneSuccess, createLaneFailure } from "../../../application/actions/LaneActions"
 import { loadingPlayers } from "../../../application/actions/PlayerActions";
 import { TYPES_CREATE_PLAYER, TYPES_LOAD_PLAYERS } from "../../../application/actions/types";
@@ -10,6 +10,7 @@ import { carService } from "../../../infrastructure/services/carService";
 import { toApiDriverMapper } from "../../../infrastructure/mappers/to-api-driver.mapper";
 import { toApiCarMapper } from "../../../infrastructure/mappers/to-api-car.mapper";
 import { toApiLaneMapper } from "../../../infrastructure/mappers/to-api-lane.mapper";
+import { apiToCarMapper } from "../../../infrastructure/mappers/api-to-car.mapper";
 import { fn } from "../../../infrastructure/utils/localStorage";
 
 const addPlayerlow = ({ playerService }) => ({ dispatch }) => (next) =>
@@ -39,7 +40,8 @@ const addPlayerlow = ({ playerService }) => ({ dispatch }) => (next) =>
 
             const data = toApiCarMapper(auxData);
             const event = await carService.create(data);
-            dispatch(createCarSucess(event.data));
+            const car = apiToCarMapper(event.data, action.payload.name);
+            dispatch(createCarSuccess(car));
             
             try {
               const auxData = {
@@ -77,6 +79,11 @@ const loadPlayersFlow = ({ playerService }) => ({ dispatch }) => (next) =>
     }
   };
 
-const playerMiddleware = [addPlayerlow, loadPlayersFlow];
+
+
+const playerMiddleware = [
+  addPlayerlow,
+  loadPlayersFlow,
+];
 
 export default playerMiddleware;

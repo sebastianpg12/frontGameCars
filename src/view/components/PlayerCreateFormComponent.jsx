@@ -10,7 +10,6 @@ const PlayerCreateForm = ({ gameId }) => {
   const dispatch = useDispatch();
 
   const [player, setPlayer] = useState();
-  const [input, setInput] = useState("");
 
   const handleOnChange = (event) => {
     const { name, value } = event.target;
@@ -19,9 +18,8 @@ const PlayerCreateForm = ({ gameId }) => {
 
   const savePlayer = () => {
     const data = toApiPlayerMapper(player, gameId);
-    setInput("");
     dispatch(createPlayer(data));
-  }
+    }
 
   return (
     <>
@@ -29,7 +27,6 @@ const PlayerCreateForm = ({ gameId }) => {
         <Input 
           handleOnChange={handleOnChange} 
           name="name"
-          value={input}
           placeholder="Ingresa un nombre"
           title="Nombre del jugador"
           type="text"

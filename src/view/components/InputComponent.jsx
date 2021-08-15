@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Input = ({ handleOnChange, name, placeholder, title, type, value }) => {
+export const Input = ({ handleOnChange, name, placeholder, title, type }) => {
   return (
     <>
       <div className="input">
@@ -9,7 +9,6 @@ export const Input = ({ handleOnChange, name, placeholder, title, type, value })
           type={type}
           className="input__input"
           required
-          value={value}
           placeholder={placeholder}
           onChange={handleOnChange}
           name={name}

@@ -7,4 +7,5 @@ export const RESOURCE_URL = {
     createLane: `/lane/create`,
     createTrack: `/create/track`,
     getPlayerByGame: (gameId) => `/players/game/${gameId}`,
+    getCarByPlayer: (playerId) => `/car/driver/${playerId}`,
 };

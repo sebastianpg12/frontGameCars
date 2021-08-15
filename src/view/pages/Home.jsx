@@ -10,7 +10,6 @@ import PlayerCreateForm from "../components/PlayerCreateFormComponent";
 const Home = ({ gameId, playersCount }) => {
   const router = useHistory();
 
-  console.log(playersCount);
   const startGame = () => {
     router.push("/game");
   }

@@ -83,3 +83,27 @@ html {
 .game-create-form {
   margin-bottom: 1rem;
 }
+
+.car {
+  position: relative;
+}
+
+.car__image-track {
+  width: 100%;
+}
+
+.car__image-track img {
+  width: 100%;
+  border-radius: 15px;
+  background-size: cover;
+}
+
+.car__image-car {
+  position: absolute;
+  width: 170px;
+  top: 0;
+  right: 89%;
+}
+.car__image-car img {
+  width: 100%;
+}
