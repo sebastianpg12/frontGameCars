@@ -1,4 +1,4 @@
-export const toApiCarMapper = (data, podiumId, gameId) => ({
+export const toApiPodiumMapper = ({ podiumId, gameId }) => ({
   podiumId,
   firstPlace: "",
   secondPlace: "",

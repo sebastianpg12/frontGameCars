@@ -6,7 +6,7 @@ export const createCar = data => ({
 });
 
 export const createCarSucess = event => ({
-  type: TYPES_CREATE_CAR.CREATE_CAR_SUCESS,
+  type: TYPES_CREATE_CAR.CREATE_CAR_SUCCESS,
   payload: event,
 });
 

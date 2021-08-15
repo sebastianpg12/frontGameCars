@@ -1,3 +1,5 @@
-export const saveToLocal = (key, value) => window.localStorage.setItem(key, value);
-export const getFromLocal = (key) => window.localStorage.getItem(key);
-export const removeFromLocal = (key) => window.localStorage.removeItem(key);
+export const fn = {
+  saveToLocal: (key, value) => window.localStorage.setItem(key, value),
+  getFromLocal: (key) => window.localStorage.getItem(key),
+  removeFromLocal: (key) => window.localStorage.removeItem(key),
+};

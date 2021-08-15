@@ -30,7 +30,7 @@ export const GameCreateForm = () => {
           title="Kilómetros de la pista"
           type="number"
         />
-        <Button handleOnClick={saveGame} label="Crear juego"/>
+        <Button handleOnClick={saveGame} label="Crear juego" />
       </div>
     </>
   );

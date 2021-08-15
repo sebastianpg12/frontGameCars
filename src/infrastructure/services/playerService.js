@@ -3,5 +3,5 @@ import { RESOURCE_URL } from "../../environment/RESOURCE_URL";
 
 export const playerService = {
   create: data => http.post(RESOURCE_URL.createPlayer, data),
-  getById: player => http.get(RESOURCE_URL.getPlayerById(player.id)),
+  load: playerId => http.get(RESOURCE_URL.getPlayerByGame(playerId)),
 };

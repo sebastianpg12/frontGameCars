@@ -14,12 +14,12 @@ html {
   background-size: cover;
 }
 
-.home {
+.container-section, .alert {
   width: 90%;
   margin: 3rem auto;
   padding: 50px;
   border-radius: 3px;
-  background-image: radial-gradient(circle at 0% 0%, #00356D 0, #00356D 16.67%, #005555 33.33%);
+  background-image: radial-gradient(circle at 0% 0%, #174d88 0, #00356D 16.67%, #005555 33.33%);
   box-shadow: 7px 9px 5px -2px rgb(63, 63, 63);
 }
 
@@ -53,6 +53,9 @@ html {
   font-size: 19px;
   margin-bottom: 1rem;
 }
+.alert__title, .alert__content {
+  color: #fff;
+}
 
 .button {
   border: 3px solid;
@@ -65,12 +68,17 @@ html {
   border: 3px solid #00356D;
 }
 
+.button--right {
+  margin-left: 90%;
+}
+
 .button:hover {
   border: 3px #cee0e0 solid;
   color: #cee0e0;
   background-color: #005555;
   cursor: pointer;
 }
+
 
 .game-create-form {
   margin-bottom: 1rem;

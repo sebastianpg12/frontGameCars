@@ -5,7 +5,7 @@ export const createPlayer = (data) => ({
   payload: data,
 });
 
-export const createPlayerSucces = (event) => ({
+export const createPlayerSuccess = (event) => ({
   type: TYPES_CREATE_PLAYER.CREATE_PLAYER_SUCCESS,
   payload: event,
 });
@@ -15,9 +15,9 @@ export const createPlayerFailure = (messages) => ({
   payload: messages,
 });
 
-export const loadingPlayers = (id) => ({
-  type: TYPES_LOAD_PLAYERS.LOADIND_PLAYERS,
-  payload: id,
+export const loadingPlayers = (playerId) => ({
+  type: TYPES_LOAD_PLAYERS.LOADING_PLAYERS,
+  payload: playerId,
 });
 
 export const loadingPlayersSuccess = (players) => ({

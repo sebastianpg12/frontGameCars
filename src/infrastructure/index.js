@@ -3,7 +3,7 @@ import { driverService } from './services/driverService';
 import { podiumService } from './services/podiumService'
 import { trackService } from './services/trackService';
 import { gameService } from './services/gameService'
-import { railService } from './services/railService';
+import { laneService } from './services/laneService';
 import { carService } from './services/carService';
 
 export const api = {
@@ -11,7 +11,7 @@ export const api = {
    driverService,
    podiumService,
    trackService,
-   railService,
+   laneService,
    gameService,
    carService,
 };

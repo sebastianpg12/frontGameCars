@@ -1,5 +1,5 @@
 
-import { TYPES_CREATE_DRIVER} from "./types";
+import { TYPES_CREATE_DRIVER } from "./types";
 
 export const createDriver = (data) => ({
     type: TYPES_CREATE_DRIVER.CREATE_DRIVER,
@@ -7,7 +7,7 @@ export const createDriver = (data) => ({
 });
 
 export const createDriverSuccess = (event) => ({
-    type: TYPES_CREATE_DRIVER.CREATE_DRIVER_SUCCES,
+    type: TYPES_CREATE_DRIVER.CREATE_DRIVER_SUCCESS,
     payload: event,
 })
 

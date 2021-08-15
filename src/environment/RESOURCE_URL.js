@@ -1,10 +1,10 @@
 export const RESOURCE_URL = { 
     createPlayer : `/player/create`,
-    createCar: `/create/car`,
+    createCar: `/car/create`,
     createDriver: `/driver/create`,
     createGame: `/create/game`,
-    createPodium: `/create/podium`,
-    createRail: `/create/rail`,
+    createPodium: `/podium/create`,
+    createLane: `/lane/create`,
     createTrack: `/create/track`,
-    getPlayerById: (id) => `/get/player/by/id/${id}`,
+    getPlayerByGame: (gameId) => `/players/game/${gameId}`,
 };

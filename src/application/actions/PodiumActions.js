@@ -12,6 +12,6 @@ export const createPodiumSuccess = (event) => ({
 })
 
 export const createPodiumFailure = (messages) => ({
-    type: TYPES_CREATE_PODIUM.CREATE_PODIUM_SUCCESS,
+    type: TYPES_CREATE_PODIUM.CREATE_PODIUM_FAILURE,
     payload: messages,
 });

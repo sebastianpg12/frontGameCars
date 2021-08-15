@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Button = ({ handleOnClick, label }) => {
+export const Button = ({ handleOnClick, label, modifiers, disabled }) => {
   return (
     <>
-      <button className="button" onClick={handleOnClick}>
+      <button className={`button ${modifiers}`} onClick={handleOnClick} disabled={disabled}>
         {label}
       </button>
     </>
