@@ -9,11 +9,7 @@ const intialState = {
     switch (type) {
         case TYPES_CREATE_TRACK.CREATE_TRACK:{ return state; }
     
-        case TYPES_CREATE_TRACK.CREATE_TRACK_SUCCESS: {
-          const aux = state.track;
-          aux.push(payload);
-          return { ...state, track: aux };
-        }
+        case TYPES_CREATE_TRACK.CREATE_TRACK_SUCCESS: { return { ...state, track: payload }; }
     
         case TYPES_CREATE_TRACK.CREATE_TRACK_FAILURE: { return { ...state, message: payload }; }
     

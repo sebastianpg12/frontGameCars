@@ -4,7 +4,7 @@ export const Alert = ({ title, content }) => {
   return (
     <>
       <div className="alert">
-        <h3 className="alert__title">{title}</h3>
+        <h2 className="alert__title">{title}</h2>
         <p className="alert__content">{content}</p>
       </div>
     </>

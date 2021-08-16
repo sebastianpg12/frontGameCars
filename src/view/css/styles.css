@@ -53,8 +53,13 @@ html {
   font-size: 19px;
   margin-bottom: 1rem;
 }
+
 .alert__title, .alert__content {
   color: #fff;
+}
+
+.alert__title {
+  margin-bottom: 15px;
 }
 
 .button {
@@ -70,6 +75,10 @@ html {
 
 .button--right {
   margin-left: 90%;
+}
+
+.button--center {
+  margin: 0 auto;
 }
 
 .button:hover {
@@ -94,16 +103,61 @@ html {
 
 .car__image-track img {
   width: 100%;
-  border-radius: 15px;
   background-size: cover;
 }
 
 .car__image-car {
   position: absolute;
   width: 170px;
-  top: 0;
+  top: 46px;
   right: 89%;
 }
 .car__image-car img {
   width: 100%;
+}
+
+.car__title {
+  margin: 2rem 1rem 1rem;
+  color: #fff;
+  z-index: 10;
+  text-align: center;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  z-index: 15;
+  width: 100%;
+  height: 100vh;
+  background-color: #228d8d73;
+}
+
+.modal__content {
+  margin: 5rem auto 0;
+  width: 60%;
+  height: 75%;
+  text-align: center;
+  background-image: radial-gradient(circle at 0% 0%, #174d88 0, #00356D 16.67%, #005555 33.33%);
+  border-radius: 10px;
+  box-shadow: 9px 12px 7px -4px rgb(51, 51, 51);
+}
+
+.modal__img-second, .modal__img-third {
+  width: 250px;
+}
+
+.modal__img-second img, .modal__img-third img {
+  width: 100%;
+}
+
+.modal__winner {
+  color: #fff;
+  text-align: center;
+}
+
+.moda__places {
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }

@@ -6,6 +6,8 @@ export const RESOURCE_URL = {
     createPodium: `/podium/create`,
     createLane: `/lane/create`,
     createTrack: `/create/track`,
-    getPlayerByGame: (gameId) => `/players/game/${gameId}`,
-    getCarByPlayer: (playerId) => `/car/driver/${playerId}`,
+    getPlayerByGame: gameId => `/players/game/${gameId}`,
+    getPodiumById: podiumId => `/podium/${podiumId}`,
+    getCarByGame: gameId => `/car/game/${gameId}`,
+    advanceCar: (trackDistance) => `/car/advance/${trackDistance}`,
 };

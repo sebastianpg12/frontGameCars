@@ -9,11 +9,7 @@ export const laneReducer = (state = intialState, { type, payload }) => {
   switch (type) {
     case TYPES_CREATE_LANE.CREATE_LANE: { return state; }
 
-    case TYPES_CREATE_LANE.CREATE_LANE_SUCCESS: { 
-      const aux = state.lane;
-      aux.push(payload);
-      return { ...state, lane: aux };
-    }
+    case TYPES_CREATE_LANE.CREATE_LANE_SUCCESS: { return { ...state, lane: payload};}
 
     case TYPES_CREATE_LANE.CREATE_LANE_FAILURE: { return { ...state, message: payload }; }
 

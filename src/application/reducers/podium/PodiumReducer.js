@@ -9,11 +9,7 @@ export const podiumReducer = (state = intialState, {type, payload}) =>{
     switch (type){
         case TYPES_CREATE_PODIUM.CREATE_PODIUM: { return state; }
     
-        case TYPES_CREATE_PODIUM.CREATE_PODIUM_SUCCESS: {
-            const aux = state.podium;
-            aux.push(payload);
-            return { ...state, podium: aux };
-        }
+        case TYPES_CREATE_PODIUM.CREATE_PODIUM_SUCCESS: { return { ...state, podium: payload }; }
             
         case TYPES_CREATE_PODIUM.CREATE_PODIUM_FAILURE: { return { ...state, message: payload }; }
 

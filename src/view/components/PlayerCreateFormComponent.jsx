@@ -38,7 +38,7 @@ const PlayerCreateForm = ({ gameId }) => {
 }
 
 const mapStateToProps = state => ({
-  gameId: state.gameReducer.game?.[0]?.gameId,
+  gameId: state.gameReducer.game?.gameId,
 });
 
 export default connect(mapStateToProps)(PlayerCreateForm);

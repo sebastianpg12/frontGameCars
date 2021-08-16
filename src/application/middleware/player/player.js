@@ -1,4 +1,10 @@
-import { createPlayerFailure, createPlayerSuccess, loadingPlayersSuccess, loadingPlayersFailure } from "../../../application/actions/PlayerActions";
+import { 
+  createPlayerFailure, 
+  createPlayerSuccess, 
+  loadingPlayersSuccess, 
+  loadingPlayersFailure 
+} from "../../../application/actions/PlayerActions";
+
 import { createDriverSuccess, createDriverFailure } from "../../../application/actions/DriverActions";
 import { createCarSuccess, createCarFailure } from "../../../application/actions/CarActions";
 import { createLaneSuccess, createLaneFailure } from "../../../application/actions/LaneActions"
@@ -36,11 +42,12 @@ const addPlayerlow = ({ playerService }) => ({ dispatch }) => (next) =>
               carId: fn.getFromLocal("CAR_ID"),
               laneId: fn.getFromLocal("LANE_ID"),
               gameId: fn.getFromLocal("GAME_ID"),
+              namePlayer: action.payload.name
             }
 
             const data = toApiCarMapper(auxData);
             const event = await carService.create(data);
-            const car = apiToCarMapper(event.data, action.payload.name);
+            const car = apiToCarMapper(event.data);
             dispatch(createCarSuccess(car));
             
             try {

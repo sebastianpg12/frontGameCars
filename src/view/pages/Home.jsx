@@ -41,7 +41,7 @@ const Home = ({ gameId, playersCount }) => {
 
 
 const mapStateToProps = state => ({
-  gameId: state.gameReducer.game?.[0]?.gameId,
+  gameId: state.gameReducer.game?.gameId,
   playersCount: state.playerReducer.players.length,
 });
 

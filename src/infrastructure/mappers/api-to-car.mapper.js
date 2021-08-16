@@ -1,4 +1,4 @@
-export const apiToCarMapper = ({ carId, laneId, gameId, driverId, goal, currentPosition, advance }, playerName) => ({
+export const apiToCarMapper = ({ carId, laneId, gameId, driverId, goal, currentPosition, advance, namePlayer }) => ({
   carId,
   laneId,
   gameId,
@@ -6,5 +6,5 @@ export const apiToCarMapper = ({ carId, laneId, gameId, driverId, goal, currentP
   goal,
   currentPosition,
   advance,
-  playerName,
+  namePlayer,
 });
