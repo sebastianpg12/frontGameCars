@@ -47,7 +47,7 @@ const Game = ({ gameId, cars, isGameFinished, isPodiumFull, trackDistance, podiu
                   </figure>
                 </div>
               </div>
-              <Button handleOnClick={closeModal} label="Cerrar" modifiers="button--center"/>
+              <Button handleOnClick={closeModal} label="Cerrar"/>
             </div>
           </div>
         ): null
